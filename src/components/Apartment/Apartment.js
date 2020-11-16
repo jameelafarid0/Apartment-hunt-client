@@ -22,7 +22,7 @@ const Apartment = ({ place }) => {
                             <span className="fontSize"><img src={image2} className="left" width="20px" height="15px" alt="" /> 2 bathroom</span>
                         </div>
                         <div className="bottom" >
-                            <span className="price">{price}</span>
+                            <span className="price">${price}</span>
                             <Button  className="Buttons">View details</Button>
                         </div>
 

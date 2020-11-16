@@ -20,6 +20,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <ul>
+                    <li><h3 className="color">Company</h3></li>
                         <li>About</li>
                         <li>Site Map</li>
                         <li>Support</li>
@@ -29,7 +30,7 @@ const Footer = () => {
                     </ul>
                     
                 </div>
-                <div >
+                <div style={{marginLeft:"20px"}}>
                     
                    
                         <ul>
