@@ -7,7 +7,7 @@ const HouseRent = () => {
     const [rent, setRent] = useState([]);
 
     useEffect(() => {
-        fetch('https://shielded-lowlands-58151.herokuapp.com/service')
+        fetch('https://obscure-ridge-72586.herokuapp.com/home')
             .then(res => res.json())
             .then(data => setRent(data))
     }, [])
