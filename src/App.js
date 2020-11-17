@@ -1,9 +1,10 @@
-import './App.css';
+import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route
+
+  Route, Switch
 } from "react-router-dom";
+import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home';
 import NoMatch from './components/NoMatch/NoMatch';
 
@@ -17,15 +18,19 @@ function App() {
       <Router>
 
         <Switch>
-          <Route path="/home">
+          <Route path = "/home">
             <Home />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="*">
+          <Route path = "/board" >
+              <Dashboard/>
+          </Route>
+          <Route path = "*">
             <NoMatch />
           </Route>
+         
         </Switch>
 
       </Router>

@@ -1,7 +1,6 @@
-import React, {  useEffect, useState } from 'react';
-import rentInfo from '../../fakeData/rentInfo';
+import React, { useEffect, useState } from 'react';
 import Apartment from '../Apartment/Apartment';
-import './HouseRent.css'
+import './HouseRent.css';
 
 const HouseRent = () => {
     const [rent, setRent] = useState([]);
