@@ -31,7 +31,7 @@ const Navbar = () => {
                   <a class="nav-link" href="/link">Contact</a>
                 </li>
                 <Link to="/login">
-                <button style={{padding: "10px 50px"}} type="button" class="btn btn-dark mr-2">Login</button>
+                <button style={{padding: "10px 50px", backgroundColor:"#275a53", color:"white"}} type="button" class="btn  mr-2">Login</button>
                 </Link>
                 
                 
