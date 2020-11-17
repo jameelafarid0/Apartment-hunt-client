@@ -7,13 +7,19 @@ import './Apartment.css';
 
 const Apartment = ({ place }) => {
     const { name, image, price,address } = place;
+
+import { Link } from 'react-router-dom';
+
+const Apartment = ({ place }) => {
+    const { title,  price } = place;
     return (
         <div>
             <div className=" card box   mt-5  ml-5 ">
                 <div class="card" style={{ width: "18rem" }}>
                     <img src={`data:image/png;base64,${image.img}`} class="card-img-top" alt="..." />
+                    <img src={`data:image/png;base64,${place.image.img}`} class="card-img-top" alt="..." />
                     <div class="card-body" >
-                        <h5 style={{ color: 'black', fontWeight:"bold" }} class="card-title">{name}</h5>
+                        <h5 style={{ color: 'black', fontWeight: "bold" }} class="card-title">{title}</h5>
                         <div>
                             <span className="fontSize"><img src={logo} width="10px" alt="" />{address}</span>
                         </div>
@@ -24,6 +30,13 @@ const Apartment = ({ place }) => {
                         <div className="bottom" >
                             <span className="price">{price}$</span>
                             <Button  className="Buttons">View details</Button>
+
+                            <span className="price">${price}</span>
+                            <Link to={`/apartment/${place._id}/${place.title}/${place.price}`} >
+                                <Button className="Buttons">View details</Button>
+                            </Link>
+
+
                         </div>
 
                     </div>
