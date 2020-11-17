@@ -29,6 +29,21 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
+
+import ApartmentDetails from './components/ApartmentDetails/ApartmentDetails';
+
+
+function App() {
+  return (
+
+      <Router>
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/apartment/:apartmentId/:apartmentTitle/:apartmentPrice">
+          <ApartmentDetails></ApartmentDetails>
+        </Route>
         <Route path="/">
           <Home />
         </Route>
@@ -42,6 +57,10 @@ function App() {
     </Router>
    </ UserContext.Provider>
 
+
+      </Switch>
+    </Router>
+    
   );
 }
 

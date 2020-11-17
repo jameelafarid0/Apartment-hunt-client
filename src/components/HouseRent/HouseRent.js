@@ -1,16 +1,18 @@
-import React, {  useEffect, useState } from 'react';
-import rentInfo from '../../fakeData/rentInfo';
+import React, {  useContext, useEffect, useState} from 'react';
+import { ApartmentContext } from '../../App';
 import Apartment from '../Apartment/Apartment';
 import './HouseRent.css'
 
 const HouseRent = () => {
+    
+ 
     const [rent, setRent] = useState([]);
 
     useEffect(() => {
         fetch('https://obscure-ridge-72586.herokuapp.com/home')
             .then(res => res.json())
             .then(data => setRent(data))
-    }, [])
+    }, [setRent])
 
     return (
         <div className="background">
