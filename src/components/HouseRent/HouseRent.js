@@ -1,7 +1,9 @@
+
+import React, { useEffect, useState } from 'react';
 import React, {  useContext, useEffect, useState} from 'react';
 import { ApartmentContext } from '../../App';
 import Apartment from '../Apartment/Apartment';
-import './HouseRent.css'
+import './HouseRent.css';
 
 const HouseRent = () => {
     

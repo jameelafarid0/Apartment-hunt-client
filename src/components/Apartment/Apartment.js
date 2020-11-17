@@ -1,9 +1,13 @@
 import React from 'react';
-import './Apartment.css'
-import logo from '../../images/map-marker-alt-solid 1.png';
-import image1 from '../../images/bed 1.png';
-import image2 from '../../images/bath 1.png';
 import { Button } from 'react-bootstrap';
+import image2 from '../../images/bath 1.png';
+import image1 from '../../images/bed 1.png';
+import logo from '../../images/map-marker-alt-solid 1.png';
+import './Apartment.css';
+
+const Apartment = ({ place }) => {
+    const { name, image, price,address } = place;
+
 import { Link } from 'react-router-dom';
 
 const Apartment = ({ place }) => {
@@ -12,21 +16,26 @@ const Apartment = ({ place }) => {
         <div>
             <div className=" card box   mt-5  ml-5 ">
                 <div class="card" style={{ width: "18rem" }}>
+                    <img src={`data:image/png;base64,${image.img}`} class="card-img-top" alt="..." />
                     <img src={`data:image/png;base64,${place.image.img}`} class="card-img-top" alt="..." />
                     <div class="card-body" >
                         <h5 style={{ color: 'black', fontWeight: "bold" }} class="card-title">{title}</h5>
                         <div>
-                            <span className="fontSize"><img src={logo} width="10px" alt="" /> Nasirabad H/S, Chattogram</span>
+                            <span className="fontSize"><img src={logo} width="10px" alt="" />{address}</span>
                         </div>
                         <div>
                             <span className="fontSize"><img src={image1} width="20px" alt="" /> 3 bedrooms</span>
                             <span className="fontSize"><img src={image2} className="left" width="20px" height="15px" alt="" /> 2 bathroom</span>
                         </div>
                         <div className="bottom" >
+                            <span className="price">{price}$</span>
+                            <Button  className="Buttons">View details</Button>
+
                             <span className="price">${price}</span>
                             <Link to={`/apartment/${place._id}/${place.title}/${place.price}`} >
                                 <Button className="Buttons">View details</Button>
                             </Link>
+
 
                         </div>
 

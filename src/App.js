@@ -1,9 +1,10 @@
-import './App.css';
+import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route
+
+  Route, Switch
 } from "react-router-dom";
+import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home';
 import NoMatch from './components/NoMatch/NoMatch';
 import Login from './components/Login/Login';
@@ -58,8 +59,28 @@ function App() {
    </ UserContext.Provider>
 
 
+
+        <Switch>
+          <Route path = "/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path = "/board" >
+              <Dashboard/>
+          </Route>
+          <Route path = "*">
+            <NoMatch />
+          </Route>
+         
+        </Switch>
+
+      </Router>
+
       </Switch>
     </Router>
+
     
   );
 }
