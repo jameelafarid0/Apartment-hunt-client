@@ -1,8 +1,11 @@
 import firebase from 'firebase/app'
 import "firebase/auth";
+
 import firebaseConfig from './firebase.config';
 
+
 export const initializeLoginFramework = () => {
+   
     if (firebase.apps.length===0) {
         firebase.initializeApp(firebaseConfig);
      }
@@ -12,14 +15,16 @@ export const initializeLoginFramework = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         return firebase.auth().signInWithPopup(provider)
         .then(res => {
-            console.log(res)
+           
           const {displayName, email} = res.user;
+         
           const signedInUser = {
             isSignedIn:true,
             name:displayName,
             email:email,
             success:true
           }
+          
           return signedInUser;
         
         })
